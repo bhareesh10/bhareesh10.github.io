@@ -22,7 +22,6 @@
       padding: 40px;
       width: 70%;
       min-width: 300px;
-      
     }
 
     h1 {
@@ -47,8 +46,7 @@
       display: none;
       width: fit-content;
       margin: auto;
-      margin-bottom:20px;
-
+      margin-bottom: 20px;
     }
 
     button {
@@ -89,236 +87,266 @@
     .step.finish {
       background-color: #04aa6d;
     }
-    .center{
+    .center {
       text-align: center;
     }
-    .temp-img{
+    .temp-img {
       width: 100%;
       max-width: 400px;
     }
-    .image-aside{
+    .image-aside {
       display: flex;
       flex-direction: row;
     }
     @media only screen and (max-width: 1200px) {
-      .image-aside{
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-    }
+      .image-aside {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+      }
     }
 
-    .steel-image{
-      max-width: 500px;
-    }
-    .center-image{
+    .img-container {
       display: flex;
       align-items: center;
       justify-content: center;
+      flex-direction: column;
+    }
+    .img {
+      max-width: 300px;
     }
   </style>
   <body>
     <form id="regForm" action="">
-
       <h1>Thermal conductivity of insulating powder(Lagged Sphere)</h1>
-      
+
       <!-- One "tab" for each step in the form: -->
       <div class="tab">
-          <table class="fl-table">
-              <form>
-                <thead>
-                  <th><label for="v1">Voltage(V)</label></th>
-                  <th><label for="v2">Current(amps)</label></th>
-                </thead>
-                <tbody>
-                  <tr>
-                    <td>
-                      <input
-                        type="number"
-                        id="v0"
-                        name="v"
-                        value="100"
-                        placeholder="in volts "
-                        required
-                      /><br />
-                    </td>
-                    <td>
-                      <input
-                        type="number"
-                        id="v1"
-                        name="v"
-                        value="0.45"
-                        placeholder="in amps"
-                        required
-                      /><br />
-                    </td>
-                  </tr>
-                </tbody>
-              </form>
-            </table>
+        <table class="fl-table">
+          <form>
+            <thead>
+              <th><label for="v1">Voltage(V)</label></th>
+              <th><label for="v2">Current(amps)</label></th>
+            </thead>
+            <tbody>
+              <tr>
+                <td>
+                  <input
+                    type="number"
+                    id="v0"
+                    name="v"
+                    value="100"
+                    placeholder="in volts "
+                    required
+                  /><br />
+                </td>
+                <td>
+                  <input
+                    type="number"
+                    id="v1"
+                    name="v"
+                    value="0.45"
+                    placeholder="in amps"
+                    required
+                  /><br />
+                </td>
+              </tr>
+            </tbody>
+          </form>
+        </table>
       </div>
-      
+
       <div class="tab">
+        <div class="img-container">
+          <img src="./assets/images/sphere.png" alt="" class="img" />
           <table class="fl-table">
-              <form>
-                <thead>
-                  <h4>Inner Surface Temperature (<sup>o </sup>C)</h4>
-                  <th><label for="t1">T1(<sup>o </sup>C)</label></th>
-                  <th><label for="t2">T2(<sup>o </sup>C)</label></th>
-                  <th><label for="t3">T3(<sup>o </sup>C)</label></th>
-                  <th><label for="t1">T4(<sup>o </sup>C)</label></th>
-                  <th><label for="t2">T5(<sup>o </sup>C)</label></th>
-                  <th><label for="t3">T6(<sup>o </sup>C)</label></th>
-                </thead>
-                <tbody>
-                  <tr>
-                    <td>
-                      <input
-                        type="number"
-                        id="v0"
-                        name="t"
-                        value="152.5"
-                        placeholder="in &deg;C "
-                        required
-                      /><br />
-                    </td>
-                    <td>
-                      <input
-                        type="number"
-                        id="v1"
-                        name="t"
-                        value="149"
-                        placeholder="in &deg;C"
-                        required
-                      /><br />
-                    </td>
-                    <td>
-                      <input
-                        type="number"
-                        id="v2"
-                        name="t"
-                        value="149.5"
-                        placeholder="in &deg;C"
-                        required
-                      /><br />
-                    </td>
-                    <td>
-                      <input
-                        type="number"
-                        id="v0"
-                        name="t"
-                        value="136.5"
-                        placeholder="in &deg;C "
-                        required
-                      /><br />
-                    </td>
-                    <td>
-                      <input
-                        type="number"
-                        id="v1"
-                        name="t"
-                        value="135.5"
-                        placeholder="in &deg;C"
-                        required
-                      /><br />
-                    </td>
-                    <td>
-                      <input
-                        type="number"
-                        id="v2"
-                        name="t"
-                        value="135"
-                        placeholder="in &deg;C"
-                        required
-                      /><br />
-                    </td>
-                  </tr>
-                </tbody>
-              </form>
-            </table>
+            <form>
+              <thead>
+                <h4>Inner Surface Temperature (<sup>o </sup>C)</h4>
+                <th>
+                  <label for="t1">T1(<sup>o </sup>C)</label>
+                </th>
+                <th>
+                  <label for="t2">T2(<sup>o </sup>C)</label>
+                </th>
+                <th>
+                  <label for="t3">T3(<sup>o </sup>C)</label>
+                </th>
+                <th>
+                  <label for="t1">T4(<sup>o </sup>C)</label>
+                </th>
+                <th>
+                  <label for="t2">T5(<sup>o </sup>C)</label>
+                </th>
+                <th>
+                  <label for="t3">T6(<sup>o </sup>C)</label>
+                </th>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>
+                    <input
+                      type="number"
+                      id="v0"
+                      name="t"
+                      value="152.5"
+                      placeholder="in &deg;C "
+                      required
+                    /><br />
+                  </td>
+                  <td>
+                    <input
+                      type="number"
+                      id="v1"
+                      name="t"
+                      value="149"
+                      placeholder="in &deg;C"
+                      required
+                    /><br />
+                  </td>
+                  <td>
+                    <input
+                      type="number"
+                      id="v2"
+                      name="t"
+                      value="149.5"
+                      placeholder="in &deg;C"
+                      required
+                    /><br />
+                  </td>
+                  <td>
+                    <input
+                      type="number"
+                      id="v0"
+                      name="t"
+                      value="136.5"
+                      placeholder="in &deg;C "
+                      required
+                    /><br />
+                  </td>
+                  <td>
+                    <input
+                      type="number"
+                      id="v1"
+                      name="t"
+                      value="135.5"
+                      placeholder="in &deg;C"
+                      required
+                    /><br />
+                  </td>
+                  <td>
+                    <input
+                      type="number"
+                      id="v2"
+                      name="t"
+                      value="135"
+                      placeholder="in &deg;C"
+                      required
+                    /><br />
+                  </td>
+                </tr>
+              </tbody>
+            </form>
+          </table>
+        </div>
       </div>
-      
+
       <div class="tab">
+        <div class="img-container">
+          <img src="./assets/images/sphere.png" alt="" class="img" />
           <table class="fl-table">
-              <form>
-                <thead>
-                  <h4>outer Surface Temperature (<sup>o </sup>C)</h4>
-                  <th><label for="t1">T7(<sup>o </sup>C)</label></th>
-                  <th><label for="t2">T8(<sup>o </sup>C)</label></th>
-                  <th><label for="t3">T9(<sup>o </sup>C)</label></th>
-                  <th><label for="t1">T10(<sup>o </sup>C)</label></th>
-                  <th><label for="t2">T11(<sup>o </sup>C)</label></th>
-                  <th><label for="t3">T12(<sup>o </sup>C)</label></th>
-                </thead>
-                <tbody>
-                  <tr>
-                    <td>
-                      <input
-                        type="number"
-                        id="v0"
-                        name="t"
-                        value="43.5"
-                        placeholder="in &deg;C "
-                        required
-                      /><br />
-                    </td>
-                    <td>
-                      <input
-                        type="number"
-                        id="v1"
-                        name="t"
-                        value="42.5"
-                        placeholder="in &deg;C"
-                        required
-                      /><br />
-                    </td>
-                    <td>
-                      <input
-                        type="number"
-                        id="v2"
-                        name="t"
-                        value="43"
-                        placeholder="in &deg;C"
-                        required
-                      /><br />
-                    </td>
-                    <td>
-                      <input
-                        type="number"
-                        id="v0"
-                        name="t"
-                        value="39.5"
-                        placeholder="in &deg;C "
-                        required
-                      /><br />
-                    </td>
-                    <td>
-                      <input
-                        type="number"
-                        id="v1"
-                        name="t"
-                        value="39.5"
-                        placeholder="in &deg;C"
-                        required
-                      /><br />
-                    </td>
-                    <td>
-                      <input
-                        type="number"
-                        id="v2"
-                        name="t"
-                        value="39.5"
-                        placeholder="in &deg;C"
-                        required
-                      /><br />
-                    </td>
-                  </tr>
-                </tbody>
-              </form>
-            </table>
+            <form>
+              <thead>
+                <h4>outer Surface Temperature (<sup>o </sup>C)</h4>
+                <th>
+                  <label for="t1">T7(<sup>o </sup>C)</label>
+                </th>
+                <th>
+                  <label for="t2">T8(<sup>o </sup>C)</label>
+                </th>
+                <th>
+                  <label for="t3">T9(<sup>o </sup>C)</label>
+                </th>
+                <th>
+                  <label for="t1">T10(<sup>o </sup>C)</label>
+                </th>
+                <th>
+                  <label for="t2">T11(<sup>o </sup>C)</label>
+                </th>
+                <th>
+                  <label for="t3">T12(<sup>o </sup>C)</label>
+                </th>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>
+                    <input
+                      type="number"
+                      id="v0"
+                      name="t"
+                      value="43.5"
+                      placeholder="in &deg;C "
+                      required
+                    /><br />
+                  </td>
+                  <td>
+                    <input
+                      type="number"
+                      id="v1"
+                      name="t"
+                      value="42.5"
+                      placeholder="in &deg;C"
+                      required
+                    /><br />
+                  </td>
+                  <td>
+                    <input
+                      type="number"
+                      id="v2"
+                      name="t"
+                      value="43"
+                      placeholder="in &deg;C"
+                      required
+                    /><br />
+                  </td>
+                  <td>
+                    <input
+                      type="number"
+                      id="v0"
+                      name="t"
+                      value="39.5"
+                      placeholder="in &deg;C "
+                      required
+                    /><br />
+                  </td>
+                  <td>
+                    <input
+                      type="number"
+                      id="v1"
+                      name="t"
+                      value="39.5"
+                      placeholder="in &deg;C"
+                      required
+                    /><br />
+                  </td>
+                  <td>
+                    <input
+                      type="number"
+                      id="v2"
+                      name="t"
+                      value="39.5"
+                      placeholder="in &deg;C"
+                      required
+                    /><br />
+                  </td>
+                </tr>
+              </tbody>
+            </form>
+          </table>
+        </div>
       </div>
-      
+
       <div style="overflow: auto">
         <div style="float: right">
           <!-- <button type="button" id="prevBtn" onclick="nextPrev(-1)">
@@ -332,7 +360,6 @@
         <span class="step"></span>
         <span class="step"></span>
         <span class="step"></span>
-        
       </div>
     </form>
 
@@ -385,7 +412,7 @@
           // ... the form gets submitted:
           calculateValues();
           // window.open("./se.html", "name", "width=600", "height=400");
-          window.location.href="./se.html"
+          window.location.href = "./se.html";
 
           // document.getElementById("regForm").submit();
           return;
