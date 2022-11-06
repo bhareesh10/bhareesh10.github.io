@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>report</title>
+    <script src="./assets/scripts/report.js"></script>
+    <script src="./assets/scripts/plotly.min.js" ></script>
+    
+    <style media="print">
+        @page {
+         size: auto;
+         margin: 0;
+              }
+              button{
+                display: none;
+              }
+       </style>
+    <style>
+
+
+         table {
+  font-family: Arial, Helvetica, sans-serif;
+  border-collapse: collapse;
+  width: 50%;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 10px;
+}
+
+        table td, table th {
+  border: 1px solid #ddd;
+  padding: 8px;
+}
+
+
+.center {
+  text-align: center;
+  ;
+}
+table th {
+  padding-top: 12px;
+  padding-bottom: 12px;
+  text-align: left;
+  background-color: #f9fcf9;
+  color: rgb(0, 0, 0);
+}
+button {
+    
+      background-color: #04aa6d;
+      color: #ffffff;
+      border: none;
+      padding: 10px 20px;
+      font-size: 17px;
+      font-family: Raleway;
+      cursor: pointer;
+      margin-left: 4px;
+    }
+
+    button:hover {
+      opacity: 0.8;
+    }
+    @media print {
+    .myDivToPrint {
+        background-color: white;
+        padding: 10px;
+       
+    }
+}
+    </style>
+</head>
+<body>
+    <div class="myDivToPrint">
+    
+        <br>
+    <h2 class = "center">       <h1>Temperature distribution along the length of pin fin in natural and forced convection</h1>
+</h2>
+   
+    <div id="dem"></div>
+    <table class="fl-table">
+        <thead>
+        <tr>
+            <th >Temperatures(<sup>o</sup>c)</th>
+            <th>Natural convection</th>
+            <th >Forced convection</th>
+            
+        </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>t1</td>
+                <td id="t11"></td>
+                <td id="t21"></td>
+            </tr>
+            <tr>
+                <td>t2</td>
+                <td id="t12"></td>
+                <td id="t22"></td>
+            </tr>
+            <tr>
+                <td>t3</td>
+                <td id="t13"></td>
+                <td id="t23"></td>
+            </tr>
+            <tr>
+                <td>t4</td>
+                <td id="t14"></td>
+                <td id="t24"></td>
+            </tr>
+            <tr>
+                <td>t5</td>
+                <td id="t15"></td>
+                <td id="t25"></td>
+            </tr>
+            <tr>
+                <td>t6</td>
+                <td id="t16"></td>
+                <td id="t26"></td>
+            </tr>
+            
+        </tbody>
+    </table>
+    <br>
+    <br>
+
+    <h3 class="center">Natural convection</h3>
+
+    <table>
+        <thead>
+        
+        </thead>
+        <tbody>
+            <tr>
+                <td style="width: 50%">Heat transfer (Q)</td>
+                <td id="q"></td>
+                <td>Watts</td>
+            </tr>
+            <tr>
+                <td>Heat transfer coefficient (h)</td>
+                <td id="hn"></td>
+                <td>w/m<sup>2</sup>-k</td>
+            </tr>
+            <tr>
+                <td>Fin efficiency(&eta;)</td>
+                <td id="nin"></td>
+                <td>&#37</td>
+            </tr>
+        
+        </tbody>
+    </table>
+    <h3 class="center">Forced convection</h3>
+    <table>
+        <thead>
+        
+        </thead>
+        <tbody>
+            <tr>
+                <td>Heat transfer (Q)</td>
+                <td id="qf"></td>
+                <td>Watts</td>
+            </tr>
+            <tr>
+                <td>Velocity of fin (V)</td>
+                <td id="u"></td>
+                <td>m/sec</td>
+            </tr>
+
+            <tr>
+                <td>Heat transfer coefficient (h)</td>
+                <td id="hf"></td>
+                <td>W/m<sup>2</sup>-k</td>
+            </tr>
+            <tr>
+                <td>Fin efficiency (&eta;)</td>
+                <td id="ninf"></td>
+                <td>&#37</td>
+            </tr>
+        
+        </tbody>
+    </table>
+    <br>
+    
+    <div class="center">
+        <button onclick="printHandler()">Print Report</button>
+    </div>
+    <script>
+    report()
+    
+    function printHandler(){
+        window.print()
+    }
+    </script>
+</body>
+</html>

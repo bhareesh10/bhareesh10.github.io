@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>report</title>
+    <script src="./assets/scripts/report.js"></script>
+    <script src="./assets/scripts/plotly.min.js" ></script>
+    
+    <style media="print">
+        @page {
+         size: auto;
+         margin: 0;
+              }
+              button{
+                display: none;
+              }
+       </style>
+    <style>
+
+
+         table {
+  font-family: Arial, Helvetica, sans-serif;
+  border-collapse: collapse;
+  width: 50%;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 10px;
+}
+
+        table td, table th {
+  border: 1px solid #ddd;
+  padding: 8px;
+}
+
+
+
+table th {
+  padding-top: 12px;
+  padding-bottom: 12px;
+  text-align: left;
+  background-color: #ffffff;
+  color: rgb(0, 0, 0);
+}
+button {
+    
+      background-color: #04aa6d;
+      color: #ffffff;
+      border: none;
+      padding: 10px 20px;
+      font-size: 17px;
+      font-family: Raleway;
+      cursor: pointer;
+      margin-left: 4px;
+    }
+
+    button:hover {
+      opacity: 0.8;
+    }
+    @media print {
+    .myDivToPrint {
+        background-color: white;
+        padding: 10px;
+       
+    }
+}
+.center {
+  text-align: center;
+  ;
+}
+    </style>
+</head>
+<body>
+    <div class="myDivToPrint">
+
+        <br>
+        <h1>Thermal conductivity of insulating powder(Lagged Pipe)</h1>
+    <div id="dem"></div>
+    <table class="fl-table">
+        <thead>
+        <tr>
+            <th>Temperatures (<sup>o</sup>C)</th>
+            <th>Values (<sup>o</sup>C)</th>
+            
+        </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>T1</td>
+                <td id="t1"></td>
+                
+            </tr>
+            <tr>
+                <td>T2</td>
+                <td id="t2"></td>
+                
+            </tr>
+            <tr>
+                <td>T3</td>
+                <td id="t3"></td>
+
+            </tr>
+            <tr>
+                <td>T4</td>
+                <td id="t4"></td>
+                
+            </tr>
+            <tr>
+                <td>T5</td>
+                <td id="t5"></td>
+                
+            </tr>
+            <tr>
+                <td>T6</td>
+                <td id="t6"></td>
+                
+            </tr>
+            <tr>
+                <td>T7</td>
+                <td id="t7"></td>
+                
+            </tr>
+            <tr>
+                <td>T8</td>
+                <td id="t8"></td>
+            </tr>
+            <tr>
+                <td>T9</td>
+                <td id="t9"></td>
+            </tr>
+            <tr>
+                <td>T10</td>
+                <td id="t10"></td>
+            </tr>
+            <tr>
+                <td>T11</td>
+                <td id="t11"></td>
+            </tr>
+            <tr>
+                <td>T12</td>
+                <td id="t12"></td>
+            </tr>
+            
+        </tbody>
+    </table>
+    <br>
+    <br>
+    <br>
+    <br>
+
+    
+    <br>
+    <table class="fl-table">
+        <thead>
+            <tr>
+                <th>Voltage(V)</th>
+                <th>Current(amps)</th>
+                <th>Power(W)</th>
+                
+            </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td id="v"></td>
+                    <td id="i"></td>
+                    <td id="q"></td>
+                    
+                </tr>
+            
+            </tbody>
+    </table>
+    <br>
+    <br>
+    
+
+
+
+    <table class="fl-table">
+        <thead>
+            <tr>
+                
+                <th>Temperature at R1(&deg;C)</th>
+                <th>Temperature at R2(&deg;C)</th>
+                <th>Temperature at R3(&deg;C)</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                
+                <td id="ti"></td>
+                <td id="tm"></td>
+                <td id="to"></td>
+            </tr>
+        </tbody>
+    </table>
+
+    <table class="fl-table">
+        <thead>
+            <tr>
+                
+                <th>Total Thermal Conductivity(W/mK)</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td id="k"></td>
+                
+            </tr>
+        </tbody>
+    </table>
+    <br>
+
+    <table class="fl-table">
+        <thead>
+            <tr>
+                
+                <th> Thermal Conductivity of Asbestos(W/mK)</th>
+                <th> Thermal Conductivity of Glass Wool(W/mK)</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td id="k1"></td>
+                <td id="k2"></td>
+            </tr>
+        </tbody>
+    </table>
+
+    </table>
+    <div id="myPlot" style="width:100%;max-width:6000px"></div>
+</div>
+    <div class="center">
+        <button onclick="printHandler()">Print Report</button>
+    </div>
+    <script>
+    report()
+    
+    function printHandler(){
+        window.print()
+    }
+    </script>
+</body>
+</html>

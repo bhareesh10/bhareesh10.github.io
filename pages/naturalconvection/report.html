@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>report</title>
+    <script src="./assets/scripts/report.js"></script>
+    <script src="./assets/scripts/plotly.min.js" ></script>
+    
+    <style media="print">
+        @page {
+         size: auto;
+         margin: 0;
+              }
+              button{
+                display: none;
+              }
+       </style>
+    <style>
+
+
+         table {
+  font-family: Arial, Helvetica, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+  margin-bottom: 10px;
+}
+
+        table td, table th {
+  border: 1px solid #ddd;
+  padding: 8px;
+}
+
+
+.center {
+  text-align: center;
+  ;
+}
+table th {
+  padding-top: 12px;
+  padding-bottom: 12px;
+  text-align: left;
+  background-color: #f9fcf9;
+  color: rgb(0, 0, 0);
+}
+button {
+    
+      background-color: #04aa6d;
+      color: #ffffff;
+      border: none;
+      padding: 10px 20px;
+      font-size: 17px;
+      font-family: Raleway;
+      cursor: pointer;
+      margin-left: 4px;
+    }
+
+    button:hover {
+      opacity: 0.8;
+    }
+    @media print {
+    .myDivToPrint {
+        background-color: white;
+        padding: 10px;
+       
+    }
+}
+    </style>
+</head>
+<body>
+    <div class="myDivToPrint">
+    
+        <br>
+        <h2 class="center">
+            Determining surface heat transfer coefficient for a vertical tube losing
+            heat by Natural Convection
+          </h2>
+   <h3 class="center">Tempearure values</h3>
+    <div id="dem"></div>
+    <table class="fl-table">
+        <thead>
+        <tr>
+            <th>Temperatures</th>
+            <th>(<sup>o</sup>C)</th>
+            
+            
+        </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>t1</td>
+                <td id="t11"></td>
+                
+            </tr>
+            <tr>
+                <td>t2</td>
+                <td id="t12"></td>
+                
+            </tr>
+            <tr>
+                <td>t3</td>
+                <td id="t13"></td>
+                
+            </tr>
+            <tr>
+                <td>t4</td>
+                <td id="t14"></td>
+                
+            </tr>
+            <tr>
+                <td>t5</td>
+                <td id="t15"></td>
+                
+            </tr>
+            <tr>
+                <td>t6</td>
+                <td id="t16"></td>
+                
+            </tr>
+            <tr>
+                <td>t7</td>
+                <td id="t17"></td>
+                
+            </tr>
+            <tr>
+                <td>t8</td>
+                <td id="t18"></td>
+                
+            </tr>
+            
+        </tbody>
+    </table>
+    <br>
+    <br>
+
+    <table>
+        <thead>
+        
+        </thead>
+        <tbody>
+            
+            <tr>
+                <td>Theroetical heat transfer coefficient </td>
+                <td id="hth"></td>
+                <td>(W/m<sup>2</sup>-K)</td>
+            </tr>
+            <tr>
+                <td>Practical heat transfer coefficient </td>
+                <td id="h"></td>
+                <td>(W/m<sup>2</sup>-K)</td>
+            </tr>
+        
+        </tbody>
+    </table>
+    <br>
+    
+</div>
+
+    <button onclick="printHandler()">Print Report</button>
+
+    <script>
+    report()
+    
+    function printHandler(){
+        window.print()
+    }
+    </script>
+</body>
+</html>

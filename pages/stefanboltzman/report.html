@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>report</title>
+    <script src="./assets/scripts/report.js"></script>
+    <script src="./assets/scripts/plotly.min.js" ></script>
+    
+    <style media="print">
+        @page {
+         size: auto;
+         margin: 0;
+              }
+              button{
+                display: none;
+              }
+       </style>
+    <style>
+
+
+         table {
+  font-family: Arial, Helvetica, sans-serif;
+  border-collapse: collapse;
+  width: 50%;
+  margin-left: auto;
+  margin-right: auto;
+  
+  margin-bottom: 10px;
+}
+
+        table td, table th {
+  border: 1px solid #ddd;
+  padding: 8px;
+}
+
+
+.center {
+  text-align: center;
+  ;
+}
+.dd{
+    border: 0px solid #ddd;
+  padding: 2px;
+}
+table th {
+  padding-top: 12px;
+  padding-bottom: 12px;
+  width: fit-content;
+  text-align: left;
+  background-color: #f9fcf9;
+  color: rgb(0, 0, 0);
+}
+button {
+    
+      background-color: #04aa6d;
+      color: #ffffff;
+      border: none;
+      padding: 10px 20px;
+      font-size: 17px;
+      font-family: Raleway;
+      cursor: pointer;
+      margin-left: 4px;
+    }
+
+    button:hover {
+      opacity: 0.8;
+    }
+    @media print {
+    .myDivToPrint {
+        background-color: white;
+        padding: 10px;
+       
+    }
+}
+    </style>
+</head>
+<body>
+    <div class="myDivToPrint">
+    
+        <br>
+    <h1 class = "center"> Thermal Conductivity and Thermal Resistivity of Composite Wall</h1>
+   <h3 class="center">tempearure values</h3>
+    <div id="dem"></div>
+    <div>
+        <table class="fl-table">
+            <thead>
+            <tr>
+                <th style="width: 50%">temperatures</th>
+                <th>(<sup>o</sup>C)</th>
+            </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>t1</td>
+                    <td id="tt11"></td>
+                    
+                </tr>
+                <tr>
+                    <td>t2</td>
+                    <td id="tt12"></td>
+                    
+                </tr>
+                <tr>
+                    <td>t3</td>
+                    <td id="tt13"></td>
+                    
+                <tr>
+                    <td>t4</td>
+                    <td id="tt14"></td>
+                    
+                </tr>
+                
+                    
+            
+            </tbody>
+        </table>
+        <br>
+        <br>
+
+        <table>
+            <thead>
+            <tr>
+                <th>Time(sec)</th>
+                <th style="width: 50%">Temperature(&deg; C)</th>
+                w
+            </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td id="t1"></td>
+                    <td id="ti1"></td>
+                </tr>
+                <tr>
+                    <td id="t2"></td>
+                    <td id="ti2"></td>
+                </tr>
+                
+                <tr>
+                    <td id="t3"></td>
+                    <td id="ti3"></td>
+                </tr>
+                <tr>
+                    <td id="t4"></td>
+                    <td id="ti4"></td>
+                </tr>
+                <tr>
+                    <td id="t5"></td>
+                    <td id="ti5"></td>
+                </tr>
+                <tr>
+                    <td id="t6"></td>
+                    <td id="ti6"></td>
+                </tr>
+                <tr>
+                    <td id="t7"></td>
+                    <td id="ti7"></td>
+                </tr>
+                <tr>
+                    <td id="t8"></td>
+                    <td id="ti8"></td>
+                </tr>
+                <tr>
+                    <td id="t9"></td>
+                    <td id="ti9"></td>
+                </tr>
+                <tr>
+                    <td id="t10"></td>
+                    <td id="ti10"></td>
+                </tr>
+                <tr>
+                    <td id="t11"></td>
+                    <td id="ti11"></td>
+                </tr>
+                <tr>
+                    <td id="t12"></td>
+                    <td id="ti12"></td>
+                </tr>
+            
+            </tbody>
+        </table>
+</div>
+    <br>
+    <table class="dd" style="border: #ffffff">
+        <thead>
+            <tr>
+                <th style="width: 30%">The stefan boltzman constant =</th>
+                <th id="thr" style="width: 8%"></th>
+                <th style="width: 20%">(W/m<sup>2</sup>K<sup>4</sup>)</th>
+<br>
+                
+            </tr>
+        </thead>
+        <tbody>
+            
+        </tbody>
+    </table>
+    
+    <div class="center"><div id="myPlot" style="width:100%;max-width:6000px"></div></div>
+</div>
+
+    <div class="center">
+        <button onclick="printHandler()">Print Report</button>
+    </div>
+    <script>
+    report()
+    
+    function printHandler(){
+        window.print()
+    }
+    </script>
+</body>
+</html>

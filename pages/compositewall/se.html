@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <script src="./assets/scripts/set.js"></script>
+        <script src="./assets/scripts/plotly.min.js"></script>
+      
+    <title>SE</title>
+    <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      background-color: #f1f1f1;
+    }
+
+    #regForm {
+      background-color: #ffffff;
+      margin: 10px auto;
+      font-family: Raleway;
+      padding: 40px 20px;
+      width: 70%;
+      min-width: 300px; 
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+    }
+    #myPlot{
+        width: 100%;
+    }
+    table {
+  font-family: Arial, Helvetica, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+table td, table th {
+  border: 1px solid #ddd;
+  padding: 8px;
+}
+
+
+
+table th {
+  padding-top: 12px;
+  padding-bottom: 12px;
+  text-align: left;
+  background-color: #444544;
+  color: white;
+}
+button {
+      background-color: #04aa6d;
+      color: #ffffff;
+      border: none;
+      padding: 10px 20px;
+      font-size: 17px;
+      font-family: Raleway;
+      cursor: pointer;
+      margin-left: 4px;
+    }
+
+    button:hover {
+      opacity: 0.8;
+    }
+    .btn-bottom{
+        display: flex;
+       
+    }
+    .secondary-btn {
+      background-color: #bbbbbb;
+      color: #fff;
+
+    }
+    #myPlot{
+        max-width: 800px;
+        margin: auto;
+    }
+    </style>
+</head>
+<body>
+    <div id="regForm">
+        <h2>Result</h2>
+
+        <div id="myFrame"></div>
+        <!--<input type="button" value="" onclick="return mydata()" ><br>-->
+        
+    <!--<p id="dem"></p>-->
+    <div id="table"></div>
+    <!--<p>Total thermal resistance :</p><div id="thr"></div>
+    <p>Total thermal conductivity :</p><div id="thc"></div>-->
+    <div class="table-wrapper">
+        <table class="fl-table">
+            <thead>
+                <tr>
+    <br>
+                    <th>Total Thermal Resistance(m<sup>2</sup>K/W)</th>
+                    <th>Total Thermal Conductivity(W/mK)</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td id="thr"></td>
+                    <td id="thc"></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <br>
+    <br>
+    <div class="table-wrapper">
+        <table class="fl-table">
+            <thead>
+            <tr>
+                <th>Material</th>
+                <th>Resistance(m<sup>2</sup>K/W)</th>
+                <th>Conductivity(W/mK)</th>
+            </tr>
+        </thead>
+        <tbody></tbody>
+        <tr>
+            <td>Mildsteel</td>
+            <td id="sr"></td>
+            <td id="sc"></td>
+        </tr>
+        <tr>
+            <td>Bakelite</td>
+            <td id="br"></td>
+            <td id="bc"></td>
+        </tr>
+        <tr>
+                <td>Wood</td>
+                <td id="wr"></td>
+                <td id="wc"></td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+    <br>
+    <br>
+    <div id="myPlot" ></div>
+    <div class="btn-bottom">
+
+        <button class="secondary-btn" onclick="goBackPage()">Back</button>
+        <button onclick="generateReport()">Report</button>
+    </div>
+</div>
+    <script>
+        function goBackPage(){
+            window.location.replace("index.html")
+        }
+        function generateReport(){
+            window.open("./report.html", "name", "width=600", "height=400");
+        }
+    </script>
+</body>
+</html>

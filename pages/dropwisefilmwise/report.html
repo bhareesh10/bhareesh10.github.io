@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>report</title>
+    <script src="./assets/scripts/report.js"></script>
+    <script src="./assets/scripts/plotly.min.js" ></script>
+    
+    <style media="print">
+        @page {
+         size: auto;
+         margin: 0;
+              }
+              button{
+                display: none;
+              }
+       </style>
+    <style>
+
+
+         table {
+  font-family: Arial, Helvetica, sans-serif;
+  border-collapse: collapse;
+  width: 50%;
+  margin-left: auto;
+  margin-right: auto;
+  
+  margin-bottom: 10px;
+}
+
+        table td, table th {
+  border: 1px solid #ddd;
+  padding: 8px;
+}
+
+.center {
+      text-align: center;
+    }
+
+
+
+table th {
+  padding-top: 12px;
+  padding-bottom: 12px;
+  text-align: left;
+  background-color: #ffffff;
+  color: rgb(0, 0, 0);
+}
+button {
+    
+      background-color: #04aa6d;
+      color: #ffffff;
+      border: none;
+      padding: 10px 20px;
+      font-size: 17px;
+      font-family: Raleway;
+      cursor: pointer;
+      margin-left: 4px;
+    }
+
+    button:hover {
+      opacity: 0.8;
+    }
+    @media print {
+    .myDivToPrint {
+        background-color: white;
+        padding: 10px;
+       
+    }
+}
+    </style>
+</head>
+<body>
+    <div class="myDivToPrint">
+
+        <br>
+        <h2 class="center">Determining overall heat transfer coefficient in dropwise and filmwise condensation</h2>
+    <div id="dem"></div>
+    <table class="fl-table">
+        <thead>
+        <tr>
+            <th>Temperatures (<sup>o</sup>C)</th>
+            <th>Values (<sup>o</sup>C)</th>
+            
+        </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Water inlet temp (t1)</td>
+                <td id="t1"></td>
+                
+            </tr>
+            <tr>
+                <td>Surface temperature of filmwise(t2)</td>
+                <td id="t2"></td>
+                
+            </tr>
+            <tr>
+                <td>Vapour temperature of filmwise(t3)</td>
+                <td id="t3"></td>
+
+            </tr>
+            <tr>
+                <td>Surface temperature of dropmwise(t4)</td>
+                <td id="t4"></td>
+                
+            </tr>
+            <tr>
+                <td>Vapour temperature of dropwise(t5)</td>
+                <td id="t5"></td>
+                
+            </tr>
+            <tr>
+                <td>Steaminlet pressure(t6)</td>
+                <td id="t6"></td>
+                
+            </tr>
+            <tr>
+                <td>Water outlet temperature from filmwise(t7)</td>
+                <td id="t7"></td>
+                
+            </tr>
+            <tr>
+                <td>Water outlet temperature from dropwisewise(t8)</td>
+                <td id="t8"></td>
+            </tr>
+            
+            
+        </tbody>
+    </table>
+    <br>
+    <br>
+
+    
+        
+    <br>
+    <br>
+    
+    <table class="fl-table">
+        <thead>
+            <tr>
+                <th>Theoretical heat transfer coefficient</th> 
+                <th>(W/m<sup>2</sup>-K)</th>
+            </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Filmwise</td>
+                    <td id="uf"></td>
+                </tr>
+                <tr>
+                    <td>Dropwise</td>
+                    
+                    <td id="ud"></td>
+                    
+                    
+                </tr>
+            
+            </tbody>
+    </table>
+    <table class="fl-table">
+        <thead>
+            <tr>
+                <th>Experimental heat transfer coefficient</th> 
+                <th>(W/m<sup>2</sup>-K)</th>
+            </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Filmwise</td>
+                    <td id="hf"></td>
+                </tr>
+                <tr>
+                    <td>Dropwise</td>
+                    
+                    <td id="hd"></td>
+                    
+                    
+                </tr>
+            
+            </tbody>
+    </table>
+
+    
+    <br>
+    
+    
+  
+    <div class="center">
+        <button onclick="printHandler()" >Print Report</button>
+    </div>
+    <script>
+    report()
+    
+    function printHandler(){
+        window.print()
+    }
+    </script>
+</body>
+</html>

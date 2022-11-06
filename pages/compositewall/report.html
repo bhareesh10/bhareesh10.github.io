@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>report</title>
+    <script src="./assets/scripts/report.js"></script>
+    <script src="./assets/scripts/plotly.min.js" ></script>
+    
+    <style media="print">
+        @page {
+         size: auto;
+         margin: 0;
+              }
+              button{
+                display: none;
+              }
+       </style>
+    <style>
+
+
+         table {
+  font-family: Arial, Helvetica, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+  margin-bottom: 10px;
+}
+
+        table td, table th {
+  border: 1px solid #ddd;
+  padding: 8px;
+}
+
+
+.center {
+  text-align: center;
+  ;
+}
+table th {
+  padding-top: 12px;
+  padding-bottom: 12px;
+  text-align: left;
+  background-color: #f9fcf9;
+  color: rgb(0, 0, 0);
+}
+button {
+    
+      background-color: #04aa6d;
+      color: #ffffff;
+      border: none;
+      padding: 10px 20px;
+      font-size: 17px;
+      font-family: Raleway;
+      cursor: pointer;
+      margin-left: 4px;
+    }
+
+    button:hover {
+      opacity: 0.8;
+    }
+    @media print {
+    .myDivToPrint {
+        background-color: white;
+        padding: 10px;
+       
+    }
+}
+    </style>
+</head>
+<body>
+    <div class="myDivToPrint">
+    
+        <br>
+    <h1 class = "center"> Thermal Conductivity and Thermal Resistivity of Composite Wall</h1>
+   <h3 class="center">Tempearure Values</h3>
+    <div id="dem"></div>
+    <table class="fl-table">
+        <thead>
+        <tr>
+            <th>Set1 (<sup>o</sup>C)</th>
+            <th>Set2 (<sup>o</sup>C)</th>
+            <th>Set3 (<sup>o</sup>C)</th>
+            <th>Average (<sup>o</sup>C)</th>
+        </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td id="t11"></td>
+                <td id="t21"></td>
+                <td id="t31"></td>
+                <td id="tt1"></td>
+            </tr>
+            <tr>
+                <td id="t12"></td>
+                <td id="t22"></td>
+                <td id="t32"></td>
+                <td id="tt2"></td>
+            </tr>
+            <tr>
+                <td id="t13"></td>
+                <td id="t23"></td>
+                <td id="t33"></td>
+                <td id="tt3"></td>
+            </tr>
+            <tr>
+                <td id="t14"></td>
+                <td id="t24"></td>
+                <td id="t34"></td>
+                <td id="tt4"></td>
+            </tr>
+            <tr>
+                <td id="t15"></td>
+                <td id="t25"></td>
+                <td id="t35"></td>
+                <td id="tt5"></td>
+            </tr>
+            <tr>
+                <td id="t16"></td>
+                <td id="t26"></td>
+                <td id="t36"></td>
+                <td id="tt6"></td>
+            </tr>
+            <tr>
+                <td id="t17"></td>
+                <td id="t27"></td>
+                <td id="t37"></td>
+                <td id="tt7"></td>
+            </tr>
+            <tr>
+                <td id="t18"></td>
+                <td id="t28"></td>
+                <td id="t38"></td>
+                <td id="tt8"></td>
+            </tr>
+            
+        </tbody>
+    </table>
+    <br>
+    <br>
+
+    <table>
+        <thead>
+        <tr>
+            <th>Total Thickness(m)</th>
+            <th>Thickness of Steel(m)</th>
+            <th>Thickness of Bakelite(m)</th>
+            <th>Thickness of Wood(m)</th>
+        </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td id="b1"></td>
+                <td id="b2"></td>
+                <td id="b3"></td>
+                <td id="b4"></td>
+            </tr>
+        
+        </tbody>
+    </table>
+    <br>
+    <table>
+        <thead>
+        <tr>
+            <th>Voltage(V)</th>
+            <th>Current(amps)</th>
+            <th>Power(Watts)</th>
+            <th>Heat flux(W/m<sup>2</sup>)</th>
+        </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td id="v"></td>
+                <td id="i"></td>
+                <td id="q"></td>
+                <td id="hf"></td>
+            </tr>
+        
+        </tbody>
+    </table>
+    <br>
+    <br>
+    
+
+
+
+    <table class="fl-table">
+        <thead>
+            <tr>
+                <th>Total Thermal Resistance(m<sup>2</sup>k/w)</th>
+                <th>Total Thermal Conductivity(W/mK)</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td id="thr"></td>
+                <td id="thc"></td>
+            </tr>
+        </tbody>
+    </table>
+    <br>
+
+
+    <table class="fl-table">
+        <thead>
+        <tr>
+            <th>Material</th>
+            <th>Resistance(m<sup>2</sup>K/W)</th>
+            <th>Conductivity(W/mK)</th>
+        </tr>
+        </thead>
+        <tbody></tbody>
+        <tr>
+            <td>Mildsteel</td>
+            <td id="sr"></td>
+            <td id="sc"></td>
+        </tr>
+        <tr>
+            <td>Bakelite</td>
+            <td id="br"></td>
+            <td id="bc"></td>
+        </tr>
+        <tr>
+            <td>Wood</td>
+            <td id="wr"></td>
+            <td id="wc"></td>
+        </tr>
+        </tbody>
+
+    </table>
+    <div id="myPlot" style="width:100%;max-width:6000px"></div>
+</div>
+
+    <button onclick="printHandler()">Print Report</button>
+
+    <script>
+    report()
+    
+    function printHandler(){
+        window.print()
+    }
+    </script>
+</body>
+</html>
