@@ -39,9 +39,9 @@ function mydata() {
   let mf = vid[2]*(0.001)/60;
   let a = (3.14  * Math.pow(0.02,2))/4;
   let mw = (mf/60)* Math.pow(10,3);
-  let dtdx = -(t1[1] - t1[3])/(xi[1]-xi[3]);
-  let dt = dtdx;
-  let kk = (mf * 4.187*(t1[10]-t1[9]))/(a*dt);
+  let dtdx = -(t1[2] - t1[3])/(xi[2]-xi[3]);
+  let dt = dtdx *1000;
+  let kk = (mf * 4187*(t1[10]-t1[9]))/(a*dt);
   let k =parseFloat(kk.toFixed(2));
 
 
@@ -55,7 +55,7 @@ function mydata() {
 
   //display variables
 
-  document.getElementById("thr").innerHTML =dt;
+  document.getElementById("thr").innerHTML =k;
   
   // Define Data
   //graph
