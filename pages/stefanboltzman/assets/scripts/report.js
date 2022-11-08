@@ -7,6 +7,10 @@ function report() {
   let sig = mystore_s.sig;
   let x1 = mystore_s.x;
   let y1 = mystore_s.y;
+  let a1 = mystore_s.a1;
+  let dtdx = mystore_s.dtdx;
+  let tt = mystore_s.tt;
+  let td = mystore_s.td;
   
 
  
@@ -43,6 +47,16 @@ function report() {
   document.getElementById("ti10").innerHTML = ti[9];
   document.getElementById("ti11").innerHTML = ti[10];
   document.getElementById("ti12").innerHTML = ti[11];
+
+
+  document.getElementById("m").innerHTML = 0.005;
+  document.getElementById("c").innerHTML = 381;
+  document.getElementById("ad").innerHTML = a1;
+  document.getElementById("dt").innerHTML = dtdx;
+  document.getElementById("ttt").innerHTML = tt;
+  document.getElementById("tttd").innerHTML = td;
+  
+  
 
 
   document.getElementById("thr").innerHTML = sig;

@@ -38,11 +38,17 @@ function mydata() {
   let sigh = (0.005*381*dtdt)/(a1*(Math.pow(tt,4)-Math.pow(td,4)));
   let sig =parseFloat(sigh.toFixed(10));
   
+  
 
   store.t = t;
   store.t1 = t1;
   store.sig = sig;
   store.ti = ti;
+  store.dtdx = parseFloat(dtdt.toFixed(10));
+  store.a1 = parseFloat(a1.toFixed(5));
+  store.tt = parseFloat(tt.toFixed(2));
+  store.td = td;
+
 
   
 

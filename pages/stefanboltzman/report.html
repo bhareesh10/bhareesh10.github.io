@@ -81,13 +81,13 @@ button {
     
         <br>
     <h1 class = "center"> Thermal Conductivity and Thermal Resistivity of Composite Wall</h1>
-   <h3 class="center">tempearure values</h3>
+   
     <div id="dem"></div>
     <div>
         <table class="fl-table">
             <thead>
             <tr>
-                <th style="width: 50%">temperatures</th>
+                <th style="width: 50%">Temperatures</th>
                 <th>(<sup>o</sup>C)</th>
             </tr>
             </thead>
@@ -124,7 +124,7 @@ button {
             <tr>
                 <th>Time(sec)</th>
                 <th style="width: 50%">Temperature(&deg; C)</th>
-                w
+                
             </tr>
             </thead>
             <tbody>
@@ -180,12 +180,50 @@ button {
             
             </tbody>
         </table>
+        <table class="fl-table">
+            <thead>
+            <tr>
+                <th style="width: 50%">Formula</th>
+                <th>&sigma; = (M*C*(dt/dx)) / A<sub>d</sub>*(T<sup>4</sup>-T<sub>d</sub><sup>4</sup>)</th>
+            </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Mass of disc, M (Kg)</td>
+                    <td id="m"></td>
+                    
+                </tr>
+                <tr>
+                    <td>Specific heat of copper, C (J/kg&deg;C)</td>
+                    <td id="c"></td>
+                    
+                </tr>
+                <tr>
+                    <td>Slope dt/dx</td>
+                    <td id="dt"></td>
+
+                <tr>
+                    <td>Area of disc, A<sub>d</sub> (m<sup>2</sup>)</td>
+                    <td id="ad"></td>
+                </tr>
+                <tr>
+                    <td>T = (t1+t2+t3)/3 (K)</td>
+                    <td id="ttt"></td>
+                </tr>
+                <tr>
+                    <td>T<sub>d</sub> = t4 (K)</td>
+                    <td id="tttd"></td>
+                </tr>
+                
+            </tbody>
+        </table>
+
 </div>
     <br>
     <table class="dd" style="border: #ffffff">
         <thead>
             <tr>
-                <th style="width: 30%">The stefan boltzman constant =</th>
+                <th style="width: 30%">The stefan boltzman constant &sigma; =</th>
                 <th id="thr" style="width: 8%"></th>
                 <th style="width: 20%">(W/m<sup>2</sup>K<sup>4</sup>)</th>
 <br>
@@ -197,7 +235,7 @@ button {
         </tbody>
     </table>
     
-    <div class="center"><div id="myPlot" style="width:100%;max-width:6000px"></div></div>
+    <div class="center"><div id="myPlot" style="width:75%;max-width:6000px"></div></div>
 </div>
 
     <div class="center">
