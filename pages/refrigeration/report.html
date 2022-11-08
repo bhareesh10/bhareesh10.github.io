@@ -112,6 +112,11 @@ button {
                 <td id="t15"></td>
                 
             </tr>
+            <tr>
+                <td>t6</td>
+                <td id="t16"></td>
+                
+            </tr>
             
             
         </tbody>
@@ -124,19 +129,19 @@ button {
         </thead>
         <tbody>
             <tr>
-                <td>h1(enthalpy-KJ)</td>
+                <td>h1(enthalpy-KJ/kg)</td>
                 <td id="h1"></td>
             </tr>
             <tr>
-                <td>h2(enthalpy-KJ)</td>
+                <td>h2(enthalpy-KJ/kg)</td>
                 <td id="h2"></td>
             </tr>
             <tr>
-              <td>h3(enthalpy-KJ)</td>
+              <td>h3(enthalpy-KJ/kg)</td>
               <td id="h3"></td>
           </tr>
           <tr>
-            <td>h4(enthalpy-KJ)</td>
+            <td>h4(enthalpy-KJ/kg)</td>
             <td id="h4"></td>
         </tr>
         </tbody>
@@ -148,20 +153,49 @@ button {
         </thead>
         <tbody>
             <tr>
-                <td>COP relative</td>
-                <td id="a"></td>
+                <td>Actual refrigeration effect = m * C<sub>p</sub>*(T<sub>wo</sub>-T<sub>wi</sub>)/(Time taken for cooling in sec) (KW)</td>
+                <td id="ar"></td>
             </tr>
             <tr>
-                <td>COP carnot</td>
+                <td>Mass of water in evaporator, m</td>
+                <td>14</td>
+            </tr>
+            <tr>
+                <td>C<sub>p</sub>  (Kj/Kg-K)</td>
+                <td>4.18</td>
+            </tr>
+            <tr>
+                <td>Actual workdone = (n*3600)/(t*E<sub>mc</sub>)  (KW)</td>
+                <td id="aw"></td>
+            </tr>
+            <tr>
+                <td>No of revolution of energy meter disc, n</td>
+                <td id="nn"></td>
+            </tr>
+            <tr>
+                <td>Time taken for n revolutions in sec, t</td>
+                <td id="tn"></td>
+            </tr>
+            <tr>
+                <td>Energy meter constant, E<sub>mc</sub>  (rev/KWh)</td>
+                <td>1600</td>
+            </tr>
+            
+            <tr>
+                <td>COP carnot = t<sub>1</sub>/(t<sub>2</sub> - t<sub>1</sub>)</td>
                 <td id="x"></td>
             </tr>
             <tr>
-              <td>COP theoretical</td>
+              <td>COP theoretical = (h<sub>1</sub> - h<sub>4</sub>)/(h<sub>2</sub> - h<sub>1</sub>)</td>
               <td id="y"></td>
           </tr>
           <tr>
-            <td>COP actual</td>
+            <td>COP actual = (Actual refrigeration effect)/(Actual workdone)</td>
             <td id="z"></td>
+        </tr>
+        <tr>
+            <td>COP relative = (COP Actual)/(COP theoretical)</td>
+            <td id="a"></td>
         </tr>
         </tbody>
     </table>

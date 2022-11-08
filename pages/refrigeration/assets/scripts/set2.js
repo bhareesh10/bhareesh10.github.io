@@ -37,7 +37,7 @@ function mydata() {
   let copth = parseFloat(copthh.toFixed(2));
   let copcarh = (t[1]+273)/(t[1] - t[0]);
   let copcar = parseFloat(copcarh.toFixed(2));
-  let re_effect = (14 * 4.18* (t[5]-t[4]))/(30*60);
+  let re_effect = (14 * 4.18* (t[4]-t[5]))/(30*60);
   let act_worhdone = (n[0]*3600)/(n[1]*1600);
   let actual_coph = re_effect/act_worhdone;
   let actual_cop = parseFloat(actual_coph.toFixed(2));
@@ -62,6 +62,9 @@ function mydata() {
   store.actual_cop = actual_cop;
   store.cop = cop;
   store.h = h;
+  store.re = parseFloat(re_effect.toFixed(2));
+  store.act = parseFloat(act_worhdone.toFixed(2));
+  store.n = n;
 
 
   let mystore_ser = JSON.stringify(store);
