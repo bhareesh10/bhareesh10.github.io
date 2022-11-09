@@ -57,8 +57,8 @@ function mydata() {
   
   let kk = th_conductivity(ro,ri,to,ti,l,q);
   
-  store.tto = to;
-  store.tti = ti;
+  store.tto = parseFloat(to.toFixed(3));;
+  store.tti = parseFloat(ti.toFixed(3));;
   store.qq = q;
   store.ttk = kk;
   
@@ -91,9 +91,9 @@ function mydata() {
 
   // Define Layout
   var layout = {
-    xaxis: { range: [0, 0.2], title: "Thickness of slab" },
-    yaxis: { range: [0, 170], title: "temperature" },
-    title: "Thickness of slab vs. temperature",
+    xaxis: { range: [0, 0.2], title: "Radius of sphere(m)" },
+    yaxis: { range: [0, 170], title: "Temperature &deg;C" },
+    title: "Radius of sphere vs. Temperature",
   };
 
   // Display using Plotly

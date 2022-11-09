@@ -50,9 +50,9 @@ function report() {
   ];
 
   var layout = {
-    xaxis: { range: [0, 1], title: "Thickness of slab" },
-    yaxis: { range: [0, 170], title: "temperature" },
-    title: "Thickness of slab vs. temperature",
+    xaxis: { range: [0, 0.2], title: "Radius of sphere(m)" },
+    yaxis: { range: [0, 170], title: "Temperature &deg;C" },
+    title: "Radius of sphere vs. Temperature",
   };
 
   // Display using Plotly
