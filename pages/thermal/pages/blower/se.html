@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+    <script src="./assets/scripts/set.js"></script>
+    <script src="./assets/scripts/plotly.min.js"></script>
+
+    <title>Hydraulic Loading</title>
+     
+    <style>
+      * {
+        box-sizing: border-box;
+      }
+
+      body {
+        background-color: #f1f1f1;
+      }
+
+      #regForm {
+        background-color: #ffffff;
+        margin: 10px auto;
+        font-family: Raleway;
+        padding: 40px 20px;
+        width: 70%;
+        min-width: 300px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+      }
+      #myPlot {
+        width: 100%;
+      }
+      table {
+        font-family: Arial, Helvetica, sans-serif;
+        border-collapse: collapse;
+        width: 100%;
+      }
+
+      table td,
+      table th {
+        border: 0px solid #ddd;
+        padding: 2px;
+        border-style: solid;
+        border-width: medium;
+        text-align: center;
+      }
+      table th {
+        padding-top: 12px;
+        padding-bottom: 12px;
+        
+        background-color: #444544;
+        color: white;
+        text-align: center;
+      }
+      button {
+        background-color: #04aa6d;
+        color: #ffffff;
+        border: none;
+        padding: 10px 20px;
+        font-size: 17px;
+        font-family: Raleway;
+        cursor: pointer;
+        margin-left: 4px;
+      }
+
+      button:hover {
+        opacity: 0.8;
+      }
+      .btn-bottom {
+        display: flex;
+      }
+      .secondary-btn {
+        background-color: #bbbbbb;
+        color: #fff;
+      }
+      #myPlot {
+        max-width: 800px;
+        margin: auto;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="regForm">
+      <h1>Load Test On 10HP Diesel Engine With Hydraulic Loading </h1>
+      
+      <h2>Result</h2>
+
+       
+      <!--<input type="button" value="" onclick="return mydata()" ><br>-->
+
+      <!--<p id="dem"></p>-->
+      <div id="table"></div>
+      <!--<p>Total thermal resistance :</p><div id="thr"></div>
+    <p>Total thermal conductivity :</p><div id="thc"></div>-->
+
+     
+      <div class="table-wrapper">
+        <table class="fl-table">
+          <thead>
+            <tr> 
+              <th>S.no</th>
+            <th>Valve Opening</th>
+            <th>Venturi head in cm of water hs</th>
+            <th>Delivery Head in cm of Water hd</th>
+            <th>Outlet Temperature</th>
+            <th>Time for 5 rev of energy meter read in sec</th>
+            <th>Static load in mts of air Hs</th>
+            <th>Delivery head in mts of air Hd</th>
+            <th>Input power</th>
+            <th>Discharge</th>
+            <th>output power</th>
+            <th>&eta; Blower</th>
+            </tr>
+          </thead>
+        </table>
+      </div>
+      <script>
+        for (let i = 1; i <= 5; i++) {
+          const row = document.createElement("tr");
+          row.innerHTML = `
+            <td id="s${i}"></td>
+            <td id="v${i}"></td>
+            <td id="hs${i}"></td>
+            <td id="hd${i}"></td>
+            <td id="t${i}"></td>
+            <td id="ti${i}"></td>
+            <td id="vh${i}"></td>
+            <td id="dh${i}"></td>
+            <td id="ip${i}"></td>
+            <td id="q${i}"></td>
+            <td id="p${i}"></td>
+            <td id="n${i}"></td>
+            
+            `;
+          document.querySelector("table").appendChild(row);
+        }
+      </script>
+     <div id="myPlot"></div>
+      <div class="btn-bottom">
+        <button class="secondary-btn" onclick="goBackPage()">Back</button>
+        <button onclick="generateReport()">Report</button>
+      </div>
+    </div>
+    <script>
+      function goBackPage() {
+        window.location.replace("index.html");
+      }
+      function generateReport() {
+        window.open("", "name", "width=600", "height=400");
+      }
+    </script>
+  </body>
+</html>

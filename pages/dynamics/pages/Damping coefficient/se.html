@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+    <script src="./assets/scripts/set.js"></script>
+    <script src="./assets/scripts/plotly.min.js"></script>
+
+    <title>Proell Governor</title>
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16×16"
+      href="/pages/compositewall/assets/images/favicon-16x16.png"
+    />
+    <style>
+      * {
+        box-sizing: border-box;
+      }
+
+      body {
+        background-color: #f1f1f1;
+      }
+
+      #regForm {
+        background-color: #ffffff;
+        margin: 10px auto;
+        font-family: Raleway;
+        padding: 40px 20px;
+        width: 70%;
+        min-width: 300px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+      }
+      #myPlot {
+        width: 100%;
+      }
+      table {
+        font-family: Arial, Helvetica, sans-serif;
+        border-collapse: collapse;
+        width: 100%;
+      }
+
+      table td,
+      table th {
+        border: 0px solid #ddd;
+        padding: 2px;
+        border-style: solid;
+        border-width: medium;
+        text-align: center;
+      }
+      table th {
+        padding-top: 12px;
+        padding-bottom: 12px;
+        text-align: center;
+        background-color: #444544;
+        color: white;
+      }
+      button {
+        background-color: #04aa6d;
+        color: #ffffff;
+        border: none;
+        padding: 10px 20px;
+        font-size: 17px;
+        font-family: Raleway;
+        cursor: pointer;
+        margin-left: 4px;
+      }
+
+      button:hover {
+        opacity: 0.8;
+      }
+      .btn-bottom {
+        display: flex;
+      }
+      .secondary-btn {
+        background-color: #bbbbbb;
+        color: #fff;
+      }
+      #myPlot {
+        max-width: 800px;
+        margin: auto;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="regForm">
+      <h2 class="left">
+        Damped torsional vibrations are studied and damping co-efficent
+      </h2>
+       
+      <h2><u> Result</u></h2>
+
+      <div id="myFrame"></div>
+      
+      <div id="table"></div>
+      <div class="table-wrapper">
+        <table>
+            <th>C<sub>act</sub></th> 
+             <td id="ca"></td>
+            <tbody>
+            </tbody>
+      </table>
+       <br />
+      <div class="btn-bottom">
+        <button class="secondary-btn" onclick="goBackPage()">Back</button>
+        <button onclick="generateReport()">Report</button>
+      </div>
+    </div>
+    <script>
+      function goBackPage() {
+        window.location.replace("index.html");
+      }
+      function generateReport() {
+        window.open("", "name", "width=600", "height=400");
+      }
+    </script>
+  </body>
+</html>

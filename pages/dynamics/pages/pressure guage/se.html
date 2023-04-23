@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+    <script src="./assets/scripts/set.js"></script>
+    <script src="./assets/scripts/plotly.min.js"></script>
+
+    <title>Pressure guage</title>
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16×16"
+      href="/pages/compositewall/assets/images/favicon-16x16.png"
+    />
+    <style>
+      * {
+        box-sizing: border-box;
+      }
+
+      body {
+        background-color: #f1f1f1;
+      }
+
+      #regForm {
+        background-color: #ffffff;
+        margin: 10px auto;
+        font-family: Raleway;
+        padding: 40px 20px;
+        width: 70%;
+        min-width: 300px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+      }
+      #myPlot {
+        width: 100%;
+      }
+      table {
+        font-family: Arial, Helvetica, sans-serif;
+        border-collapse: collapse;
+        width: 100%;
+      }
+
+      table td,
+      table th {
+        border: 0px solid #ddd;
+        padding: 2px;
+        border-style: solid;
+        border-width: medium;
+      }
+      table th {
+        padding-top: 12px;
+        padding-bottom: 12px;
+        text-align: center;
+        background-color: #444544;
+        color: white;
+      }
+      button {
+        background-color: #04aa6d;
+        color: #ffffff;
+        border: none;
+        padding: 10px 20px;
+        font-size: 17px;
+        font-family: Raleway;
+        cursor: pointer;
+        margin-left: 4px;
+      }
+
+      button:hover {
+        opacity: 0.8;
+      }
+      .btn-bottom {
+        display: flex;
+      }
+      .secondary-btn {
+        background-color: #bbbbbb;
+        color: #fff;
+      }
+      #myPlot {
+        max-width: 800px;
+        margin: auto;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="regForm">
+      <h1 class="center">To calibrate a pressure guage</h1>
+      <br />
+      <br />
+      <h2>Result</h2>
+
+      <div id="myFrame"></div>
+      <!--<input type="button" value="" onclick="return mydata()" ><br>-->
+
+      <!--<p id="dem"></p>-->
+      <div id="table"></div>
+      <!--<p>Total thermal resistance :</p><div id="thr"></div>
+    <p>Total thermal conductivity :</p><div id="thc"></div>-->
+
+      <br />
+      <br />
+      <div class="table-wrapper">
+        <table class="fl-table">
+          <thead>
+            <tr>
+              <th rowspan="2">S.no</th>
+              <th rowspan="2">Applied actual pressure(Kgf/cm<sup>2</sup>)</th>
+              <th colspan="3" >Guage indication</th>
+              <th rowspan="2">Error(Kgf/cm<sup>2</sup>)</th>
+              <th rowspan="2">Correction for actual pressure(Kgf/cm<sup>2</sup>)</th>
+              <th rowspan="2">Correction for guage indication(Kgf/cm<sup>2</sup>)</th>
+          </tr>
+          <tr>
+              <th>Upscale(Kgf/cm<sup>2</sup>)</th>
+              <th>Downscale(Kgf/cm<sup>2</sup>)</th>
+              <th>Average(Kgf/cm<sup>2</sup>)</th>
+          </tr>
+          </thead>
+          <tbody></tbody>
+        </table>
+      </div>
+      <script>
+        for (let i = 1; i <= 6; i++) {
+          const row = document.createElement("tr");
+          row.innerHTML = `
+            <td>${i}</td>
+            <td id="a${i}"></td>
+            <td id="u${i}"></td>
+            <td id="d${i}"></td>
+            <td id="v${i}"></td>
+            <td id="e${i}"></td>
+            <td id="c${i}"></td>
+            <td id="g${i}"></td>
+            `;
+          document.querySelector("table").appendChild(row);
+        }
+      </script>
+      <br />
+      <br />
+
+      <br />
+      <br />
+      <div id="myPlot"></div>
+      <div id="myPlot1"></div>
+      <div class="btn-bottom">
+        <button class="secondary-btn" onclick="goBackPage()">Back</button>
+        <button onclick="generateReport()">Report</button>
+      </div>
+    </div>
+    <script>
+      function goBackPage() {
+        window.location.replace("index.html");
+      }
+      function generateReport() {
+        window.open("", "name", "width=600", "height=400");
+      }
+    </script>
+  </body>
+</html>

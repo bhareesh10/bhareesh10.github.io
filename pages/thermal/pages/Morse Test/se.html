@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+    <script src="./assets/scripts/set.js"></script>
+    <script src="./assets/scripts/plotly.min.js"></script>
+
+    <title>Morse Test</title>
+     
+    <style>
+      * {
+        box-sizing: border-box;
+      }
+
+      body {
+        background-color: #f1f1f1;
+      }
+
+      #regForm {
+        background-color: #ffffff;
+        margin: 10px auto;
+        font-family: Raleway;
+        padding: 40px 20px;
+        width: 70%;
+        min-width: 300px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+      }
+      #myPlot {
+        width: 100%;
+      }
+      table {
+        font-family: Arial, Helvetica, sans-serif;
+        border-collapse: collapse;
+        width: 100%;
+      }
+
+      table td,
+      table th {
+        border: 0px solid #ddd;
+        padding: 2px;
+        border-style: solid;
+        border-width: medium;
+        text-align: center;
+      }
+      table th {
+        padding-top: 12px;
+        padding-bottom: 12px;
+        
+        background-color: #444544;
+        color: white;
+        text-align: center;
+      }
+      button {
+        background-color: #04aa6d;
+        color: #ffffff;
+        border: none;
+        padding: 10px 20px;
+        font-size: 17px;
+        font-family: Raleway;
+        cursor: pointer;
+        margin-left: 4px;
+      }
+
+      button:hover {
+        opacity: 0.8;
+      }
+      .btn-bottom {
+        display: flex;
+      }
+      .secondary-btn {
+        background-color: #bbbbbb;
+        color: #fff;
+      }
+      #myPlot {
+        max-width: 800px;
+        margin: auto;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="regForm">
+      <h1>Morse Test On Multi Point Fuel Injection Engine</h1>
+      
+      <h2><u> Result</u></h2>
+
+       
+      <!--<input type="button" value="" onclick="return mydata()" ><br>-->
+
+      <!--<p id="dem"></p>-->
+      <div id="table"></div>
+      <!--<p>Total thermal resistance :</p><div id="thr"></div>
+    <p>Total thermal conductivity :</p><div id="thc"></div>-->
+
+     
+      <div class="table-wrapper">
+        <table class="fl-table">
+          <thead>
+            <div >      
+             <th>Sl No</th>
+             <th>Condition</th>
+             <th>Load(KG)</th>
+             <th>RPM</th>
+             <th>Break Power(Kw)</th>
+             <th>Indicated Power(Kw)</th>
+              
+            </thead>
+            <tbody >
+              <tr>
+                <td>1</td>
+                <td> All cylinders working </td>
+              <td id="l1"> </td>
+              <td id="r1"> </td>
+              <td id="bpt"> </td>
+              <td id="ipt"> </td>
+               </tr>
+              
+               <tr>
+                  <td>2</td>
+                  <td> 1<sup>st</sup> cylinder cutt-off  
+                      <td id="l2"> </td>
+                      <td id="r2"> </td>
+                      <td id="bp1"> </td>
+                      <td id="ip1"> </td>
+                 </tr>
+               
+                 <tr>
+                  <td>3</td>
+                  <td> 2<sup>nd</sup>  cylinder cutt-off  </td>
+                  <td id="l3"> </td>
+                  <td id="r3"> </td>
+                  <td id="bp2"> </td>
+                  <td id="ip2"> </td>
+                 </tr>
+               
+                 <tr>
+                  <td>4</td>
+                  <td> 3<sup>rd</sup>  cylinder cutt-off  </td>
+                  <td id="l4"> </td>
+                  <td id="r4"> </td>
+                  <td id="bp3"> </td>
+                  <td id="ip3"> </td>
+                 </tr>
+                
+                 <tr>
+                  <td>5</td>
+                  <td>  4<sup>th</sup>  cylinder cutt-off </td>
+                  <td id="l5"> </td>
+                  <td id="r5"> </td>
+                  <td id="bp4"> </td>
+                  <td id="ip4"> </td>
+                 </tr>
+                
+              </tbody>
+        </table>
+      </div>
+      <br>
+      <br>
+      <table border="2px" style="  width: fit-content; padding: auto;">
+        <thead>
+        
+        </thead>
+        <tbody>
+            <tr>
+                <td>Total Break Power (BP)</td>
+                <td id="bptt"></td>
+                <td>Kw</td>
+            </tr>
+            <tr>
+                <td>Total Indicated Power (IP)</td>
+                <td id="iptt"></td>
+                <td>Kw</td>
+            </tr>
+
+            <tr>
+                <td>Frictional Power (FP)</td>
+                <td id="fp"></td>
+                <td>Kw</td>
+            </tr>
+            <tr>
+                <td>Mechanical Efficiency</td>
+                <td id="me"></td>
+                <td>&#37</td>
+            </tr>
+        
+        </tbody>
+    </table>
+       
+     
+      <div class="btn-bottom">
+        <button class="secondary-btn" onclick="goBackPage()">Back</button>
+        <button onclick="generateReport()">Report</button>
+      </div>
+    </div>
+    <script>
+      function goBackPage() {
+        window.location.replace("index.html");
+      }
+      function generateReport() {
+        window.open("", "name", "width=600", "height=400");
+      }
+    </script>
+  </body>
+</html>
