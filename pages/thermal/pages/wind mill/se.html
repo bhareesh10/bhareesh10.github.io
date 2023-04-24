@@ -7,7 +7,7 @@
     <script src="./assets/scripts/set.js"></script>
     <script src="./assets/scripts/plotly.min.js"></script>
 
-    <title>Hydraulic Loading</title>
+    <title>Wind Tunnel</title>
      
     <style>
       * {
@@ -84,9 +84,9 @@
   </head>
   <body>
     <div id="regForm">
-      <h1>Load Test On 10HP Diesel Engine With Hydraulic Loading </h1>
+      <h1>To determine the performance co-efficient to a laboratory wind mill using wind tunnel</h1>
       
-      <h2>Result</h2>
+      <h2> <u>Result</u></h2>
 
        
       <!--<input type="button" value="" onclick="return mydata()" ><br>-->
@@ -102,14 +102,14 @@
           <thead>
             <tr> 
               <th>S.No</th>
-            <th>Temperature</th>
-            <th>Angle of attack</th>
-            <th>Velocity of air at inlet</th>
-            <th>Velocity of air at outlet</th>
-            <th>Power of air at Inlet</th>
-            <th>Power extracted at outlet at outlet</th>
+            <th>Temperature(<sup>o</sup>C)</th>
+            <th>Angle of attack(&theta;)</th>
+            <th>Velocity of air at inlet(V<sub>i</sub>)</th>
+            <th>Velocity of air at outlet(V<sub>o</sub>)</th>
+            <th>Power of air at Inlet(P<sub>i</sub>)</th>
+            <th>Power extracted at outlet at outlet(P<sub>e</sub>)</th>
 
-            <th>Power coefficient</th>
+            <th>Power coefficient(C<sub>p</sub>)</th>
             </tr>
           </thead>
         </table>
@@ -133,10 +133,7 @@
         }
       </script>
      <div id="myPlot"></div>
-      <div class="btn-bottom">
-        <button class="secondary-btn" onclick="goBackPage()">Back</button>
-        <button onclick="generateReport()">Report</button>
-      </div>
+       
     </div>
     <script>
       function goBackPage() {

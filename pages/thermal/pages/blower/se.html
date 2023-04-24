@@ -7,7 +7,7 @@
     <script src="./assets/scripts/set.js"></script>
     <script src="./assets/scripts/plotly.min.js"></script>
 
-    <title>Hydraulic Loading</title>
+    <title>Blower</title>
      
     <style>
       * {
@@ -84,9 +84,9 @@
   </head>
   <body>
     <div id="regForm">
-      <h1>Load Test On 10HP Diesel Engine With Hydraulic Loading </h1>
+      <h1>Test on blower and to determine overall efficiency </h1>
       
-      <h2>Result</h2>
+      <h2> <u>Result</u></h2>
 
        
       <!--<input type="button" value="" onclick="return mydata()" ><br>-->
@@ -103,15 +103,15 @@
             <tr> 
               <th>S.no</th>
             <th>Valve Opening</th>
-            <th>Venturi head in cm of water hs</th>
-            <th>Delivery Head in cm of Water hd</th>
-            <th>Outlet Temperature</th>
+            <th>Venturi head in cm of water (hs)</th>
+            <th>Delivery Head in cm of Water (hd)</th>
+            <th>Outlet Temperature(<sup>o</sup>C)</th>
             <th>Time for 5 rev of energy meter read in sec</th>
-            <th>Static load in mts of air Hs</th>
-            <th>Delivery head in mts of air Hd</th>
-            <th>Input power</th>
-            <th>Discharge</th>
-            <th>output power</th>
+            <th>Static load in mts of air (Hs)</th>
+            <th>Delivery head in mts of air (Hd)</th>
+            <th>Input power(H.P)</th>
+            <th>Discharge(m<sup>3</sup>/sec)</th>
+            <th>output power(H.P)</th>
             <th>&eta; Blower</th>
             </tr>
           </thead>
@@ -139,10 +139,7 @@
         }
       </script>
      <div id="myPlot"></div>
-      <div class="btn-bottom">
-        <button class="secondary-btn" onclick="goBackPage()">Back</button>
-        <button onclick="generateReport()">Report</button>
-      </div>
+      
     </div>
     <script>
       function goBackPage() {
