@@ -106,6 +106,16 @@
               <th>Brake Power(KW)</th>
               <th>Frictional Power(KW)</th>
               <th>Indicated power(KW)</th>
+              
+            </tr>
+          </thead>
+        </table>
+      </div>
+      <br>
+      <div class="table-wrapper">
+        <table class="fl-table" id="ta">
+          <thead>
+            <tr> 
               <th>Brake Thremal Efficiency</th>
               <th>Indicated Thremal Efficiency</th>
               <th>Mechanical Efficiency</th>
@@ -126,6 +136,15 @@
             <td id="bp${i}"></td>
             <td id="fp${i}"></td>
             <td id="ip${i}"></td>
+            
+            
+            `;
+          document.querySelector("table").appendChild(row);
+        }
+        for (let i = 1; i <= 5; i++) {
+          const row = document.createElement("tr");
+          row.innerHTML = `
+            
             <td id="bte${i}"></td>
             <td id="ite${i}"></td>
             <td id="me${i}"></td>
@@ -135,7 +154,7 @@
             <td id="af${i}"></td>
             
             `;
-          document.querySelector("table").appendChild(row);
+          document.querySelector("#ta").appendChild(row);
         }
       </script>
      <div id="myPlot"></div>
