@@ -77,7 +77,7 @@ var layout = {
   },
   xaxis: {
     title: {
-      text: 'Time',
+      text: 'Time(Sec)',
       font: {
         family: 'Courier New, monospace',
         size: 18,
@@ -87,7 +87,7 @@ var layout = {
   },
   yaxis: {
     title: {
-      text: 'Speed',
+      text: 'Speed(rpm)',
       font: {
         family: 'Courier New, monospace',
         size: 18,
