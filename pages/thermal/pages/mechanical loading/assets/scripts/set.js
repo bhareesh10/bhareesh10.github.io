@@ -20,7 +20,7 @@ function mydata() {
   let xn2 = (500-b1)/m1;
   let xn1 = (400-b1)/m1;
   let tt2 = xn2-xn1;
-  document.getElementById("x2").innerHTML = xn2-xn1;
+  document.getElementById("x2").innerHTML = (xn2-xn1).toFixed(2);
 
   let m2= (400-0)/(t2[3]-0);
   let b2 = 200-(m2*t2[1]);
@@ -35,10 +35,10 @@ function mydata() {
   let bp = 0.746*5;
   let ip = bp+fp;
   let me = bp/ip;
-  document.getElementById("x").innerHTML = tf;
-  document.getElementById("ip").innerHTML = ip;
-  document.getElementById("bp").innerHTML = bp;
-  document.getElementById("me").innerHTML = me*100;
+  document.getElementById("x").innerHTML = tf.toFixed(2);
+  document.getElementById("ip").innerHTML = ip.toFixed(2);
+  document.getElementById("bp").innerHTML = bp.toFixed(2);
+  document.getElementById("me").innerHTML = (me*100).toFixed(2);
 
   
 
